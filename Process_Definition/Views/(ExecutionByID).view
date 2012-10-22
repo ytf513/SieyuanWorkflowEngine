@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A85001C85C1'>
+<noteinfo noteid='17a' unid='49DAF78D2ABFA60248257A7F000B10F2' sequence='2'>
+<created><datetime>20120920T100052,34+08</datetime></created>
+<modified><datetime>20120926T131133,95+08</datetime></modified>
+<revised><datetime>20120926T131133,94+08</datetime></revised>
+<lastaccessed><datetime>20120926T131133,95+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131133,93+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$TITLE' sign='true'><text>(ExecutionByID)|RU_EXECUTION_ID</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+YgACABAAAgBJRAUAAgBJRAMABQAeABkAAwACAAkABABJRCRDb25mbGljdCRSRUYABAAEAAAAJAAF
+AAQARm9ybQEADwBQcm9jZXNzSW5zdGFuY2UACgIDAAcACgAEAAlMMVM=
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+DwABAABEAGYAAAACAElE
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQABAAEACAAAAFZDAQACAAIAEgAAAIQAAQAACgAAAAAAAAAAAAICAAAASURJRBIAAgAQAAIASUQF
+AAIASUQDACYAAQAAAAEBAAkBAAAKAQEOCgAAAQCtKwEAAQABAAAAAAAAAAAAV0MBAQAJAAAAAAAA
+AAAAAAAAAAAAAAEAAAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA////AAUA////AAEAAAAA
+AAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAAAAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>PY</text></item>
+<item name='$DesignerVersion'><text>7</text></item></note>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1d6" sequence="4" unid="2FEE579B1539AFDC48257A6200227D45">
+<created><datetime>20120822T141642,93+08</datetime></created>
+<modified><datetime>20120928T092021,85+08</datetime></modified>
+<revised><datetime>20120928T092021,84+08</datetime></revised>
+<lastaccessed><datetime>20120928T092021,85+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131135,23+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120822T142155,70+08</datetime></item>
+<item name="$Flags"><text>34CiQP</text></item>
+<item name="$ImageNames" sign="true"><text>End_Black.gif</text></item>
+
+
+<item name="$TITLE" sign="true"><textlist><text>BPMN-General-End-Black.gif</text><text>EndEvent</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

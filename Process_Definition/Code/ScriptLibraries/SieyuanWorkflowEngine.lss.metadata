@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="22e" sequence="73" unid="89F5ED85C0A74F7048257A830009FD2B">
+<created><datetime>20120924T094906,35+08</datetime></created>
+<modified><datetime>20121022T092452,71+08</datetime></modified>
+<revised><datetime>20121022T092452,70+08</datetime></revised>
+<lastaccessed><datetime>20121022T092452,71+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131136,21+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$TITLE" sign="true"><text>SieyuanWorkflowEngine</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

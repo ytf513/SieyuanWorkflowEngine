@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1c2" sequence="3" unid="5D53E4B07E71A3DD48257A6200227D4D">
+<created><datetime>20120822T141643,01+08</datetime></created>
+<modified><datetime>20120926T131134,97+08</datetime></modified>
+<revised><datetime>20120926T131134,96+08</datetime></revised>
+<lastaccessed><datetime>20120926T131134,97+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131134,93+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$Flags"><text>D34CiQP</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120822T141520,91+08</datetime></item>
+<item name="$ImageNames" sign="true"><text>UserTask_Black.gif</text></item>
+<item name="$TITLE" sign="true"><textlist><text>UserTask_Black.gif</text><text>UserTask</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

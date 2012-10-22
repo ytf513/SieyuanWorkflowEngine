@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ca" sequence="5" unid="4CB775F0B03298BF48257A6200227D4B">
+<created><datetime>20120822T141642,99+08</datetime></created>
+<modified><datetime>20120928T091718,64+08</datetime></modified>
+<revised><datetime>20120928T091718,63+08</datetime></revised>
+<lastaccessed><datetime>20120928T091718,64+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131135,05+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$TITLE" sign="true"><textlist><text>BPMN-General-Start-Black.gif</text><text>StartEvent</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime>20120928T091430,34+08</datetime></item>
+<item name="$Flags"><text>D34CiQP</text></item>
+<item name="$ImageNames" sign="true"><text>Start_Black.gif</text></item></note>

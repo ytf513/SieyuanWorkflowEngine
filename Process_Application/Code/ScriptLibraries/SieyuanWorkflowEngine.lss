@@ -1,0 +1,1536 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+%REM
+	Library SieyuanWorkflowEngine
+	Created Sep 24, 2012 by 沈少尘 20947/siyuan
+	Description: Comments for Library
+%END REM
+Option Public
+Option Declare
+Use "Constants"
+
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+Declare Class SieyuanWorkflowEngine
+Declare Class DefinitionService
+Declare Class RuntimeService
+Declare Class TaskService
+Declare Class HistoryService
+Declare Class SerialNumberService
+Declare Class TodoService
+Declare Class ProcessDefinition
+Declare Class ActivityDefinition
+Declare Class Execution
+Declare Class ProcessInstance 
+Declare Class ActivityInstance
+Declare Class Task
+Declare Class Transition
+Declare Class IdentityService
+Declare Class User
+Declare Class SWEUtility
+Declare Class ActivityEvent
+Declare Class TaskEvent
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+%REM
+	Class SieyuanWorkflowEngine
+	Description: Comments for Class
+%END REM
+Class SieyuanWorkflowEngine
+	
+	Private EngineSettingDocument As NotesDocument
+	Public utility As SWEUtility
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New (server As String, dbpath As String)
+		Dim db As NotesDatabase
+		
+		Set db = New NotesDatabase("", "")
+		If db.Open(server, dbpath) Then
+			Set EngineSettingDocument = db.Getprofiledocument("EngineSetting")
+		Else
+			Error ERROR_NUMBER_ENGINE_DB_NOT_FOUND, ERROR_MSG_ENGINE_DB_NOT_FOUND
+		End If
+		
+		Set me.utility = New SWEUtility
+	End Sub
+	
+	%REM
+		Function GetDefinitionService
+		Description: Comments for Function
+	%END REM
+	Public Function GetDefinitionService
+		Dim srv As String
+		Dim dbpath As String
+		
+		srv = Me.GetSetting("ProcessDefinitionServer")
+		dbpath = Me.GetSetting("ProcessDefinitionDbPath")
+		
+		Set GetDefinitionService = New DefinitionService(srv, dbpath)
+		Set GetDefinitionService.ParentEngine = Me
+		
+	End Function
+
+	
+	%REM
+		Function GetRuntimService
+		Description: Comments for Function
+	%END REM
+	Public Function GetRuntimeService
+		Dim srv As String
+		Dim dbpath As String
+		
+		srv = Me.GetSetting("RuntimeServer")
+		dbpath = Me.GetSetting("RuntimeDbPath")
+		
+		Set GetRuntimeService = New RuntimeService(srv, dbpath)
+		Set GetRuntimeService.ParentEngine = Me 
+	End Function
+	
+	%REM
+		Function GetTaskService
+		Description: Comments for Function
+	%END REM
+	Public Function GetTaskService
+		Dim srv As String
+		Dim dbpath As String
+		
+		srv = Me.GetSetting("RuntimeServer")
+		dbpath = Me.GetSetting("RuntimeDbPath")
+		
+		Set GetTaskService = New TaskService(srv, dbpath)
+		Set GetTaskService.ParentEngine = Me 
+	End Function
+	
+	%REM
+		Function GetHistoryService
+		Description: Comments for Function
+	%END REM
+	Public Function GetHistoryService(procDefId As String)
+		Dim defsrv As DefinitionService
+		Dim def As ProcessDefinition
+		Dim defdoc As NotesDocument
+		
+		Dim srv As String
+		Dim dbpath As String
+		
+		Set defsrv = Me.GetDefinitionService()
+		Set def = defsrv.GetProcessDefinitionById(procdefid)
+		
+		
+		srv = def.HistoryServer
+		dbpath = def.HistoryDatabase
+		
+		Set GetHistoryService = New HistoryService(srv, dbpath)
+		Set GetHistoryService.ParentEngine = Me 
+	End Function
+	
+	%REM
+		Function GetSerialNumberService
+		Description: Comments for Function
+	%END REM
+	Public Function GetSerialNumberService
+        Dim srv As String
+        Dim dbpath As String
+        
+        srv = Me.GetSetting("RuntimeServer")
+        dbpath = Me.GetSetting("RuntimeDbPath")
+        
+    	Set GetSerialNumberService = New SerialNumberService(srv, dbpath)
+    	Set GetSerialNumberService.ParentEngine = Me 
+	End Function
+    
+    %REM
+		Function GetTodoService
+		Description: Comments for Function
+    %END REM
+    Public Function GetTodoService
+    
+        Dim srv As String
+        Dim dbpath As String
+        
+        srv = Me.GetSetting("RuntimeServer")
+        dbpath = Me.GetSetting("RuntimeDbPath")
+        
+        Set GetTodoService = New TodoService(srv, dbpath)
+        Set GetTodoService.ParentEngine = Me 
+        
+    End Function
+    
+    %REM
+    	Function GetIdentityService
+    	Description: Comments for Function
+    %END REM
+    Public Function GetIdentityService As IdentityService
+    	
+    End Function
+    
+    %REM
+		Function GetSetting
+		Description: Comments for Function
+    %END REM
+    Private Function GetSetting(settingName As String) As Variant
+		Dim item As NotesItem
+		
+		'* Can not found setting document
+		If Me.EngineSettingDocument Is Nothing Then
+			Exit Function
+		End If
+		
+		'* Cant not found setting item in document
+		If not Me.EngineSettingDocument.Hasitem(settingName) Then
+			Exit Function
+		End If
+		
+		Set item = Me.EngineSettingDocument.Getfirstitem(settingName)
+		If UBound(item.Values)-LBound(item.values)>1 Then
+			GetSetting = item.Values
+		Else
+			getSetting = item.Values(0)
+		End If
+
+	End Function
+	
+End Class
+
+
+%REM
+	Class DefinitionService
+	Description: Comments for Class
+%END REM
+Class DefinitionService
+    Private database As NotesDatabase
+    Public ParentEngine As SieyuanWorkflowEngine
+
+    %REM
+        Sub New
+        Description: Comments for Sub
+    %END REM
+    Sub New(srv, dbpath)
+        Set Me.database = New NotesDatabase("", "")
+        If Not Me.database.Open(srv, dbpath) Then
+            Error ERROR_NUMBER_DEFINITION_DB_NOT_FOUND, ERROR_MSG_DEFINITION_DB_NOT_FOUND
+        End If
+    End Sub
+
+    %REM
+        Function GetProcessDefinitionById
+        Description: Comments for Function
+    %END REM
+    Public Function GetProcessDefinitionById(procDefId As String) As ProcessDefinition
+        
+    End Function
+    
+	%REM
+		Function GetProcessDefinitionByKey
+		Description: Comments for Function
+	%END REM
+	Public Function GetProcessDefinitionByKey(procDefId As String) As ProcessDefinition
+		Dim queryView As NotesView
+		Dim qdoc As NotesDocument
+		
+		Set queryView = Me.database.getView(QUERY_VIEW_PROCESS_DEFINITION_BY_Key)
+		Set qdoc = queryView.Getdocumentbykey(procDefId, True)
+		If Not qdoc Is Nothing Then
+			Set GetProcessDefinitionByKey = New ProcessDefinition(qdoc)
+		End If
+		
+	End Function
+
+    %REM
+        Function GetActivityDefinitionById
+        Description: Comments for Function
+    %END REM
+    Public Function GetActivityDefinitionById(procDefId As String, actDefId As String) As ActivityDefinition
+        
+    End Function
+    
+    %REM
+        Function GetStartEventDefinitionById
+        Description: Comments for Function
+    %END REM
+    Public Function GetStartEventDefinitionById(procInst As processInstance) As ActivityDefinition
+        
+    End Function
+
+End Class
+
+
+%REM
+	Class RuntimeService
+	Description: Comments for Class
+%END REM
+Class RuntimeService
+	Public database As NotesDatabase
+	Public ParentEngine As SieyuanWorkflowEngine
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New(srv As String, dbpath As String)
+		Set Me.database = New NotesDatabase("", "")
+		If Not Me.database.Open(srv, dbpath) Then
+			Error ERROR_NUMBER_ENGINE_DB_NOT_FOUND, ERROR_MSG_ENGINE_DB_NOT_FOUND
+		End If
+	End Sub
+	
+	%REM
+		Function StartProccessInstance
+		Description: Comments for Function
+	%END REM
+	Function StartProccessInstance(processDefinitionId As String, BusinessKey As String) As ProcessInstance
+		Dim procInst As ProcessInstance
+		Dim exec As Execution
+	    Dim actInst As ActivityInstance
+	    
+		Set procInst = New ProcessInstance
+		procInst.ID = Me.ParentEngine.utility.GetRandomNumber()
+		procInst.ProcInstID = Me.ParentEngine.utility.GetRandomNumber()
+		procInst.BusinessKey = BusinessKey
+		procInst.ProcDefId = processDefinitionId
+		
+		Set procInst.StartTime = New NotesDateTime(Now)
+		Set procInst.Parent = Me
+	    
+	    
+	End Function
+	
+	
+	
+	%REM
+		Function DeleteProcessInstance
+		Description: Comments for Function
+	%END REM
+	Function DeleteProcessInstance(processDefinitionId As String)
+	    
+	End Function
+	
+	%REM
+		Function GetProcessInstance
+		Description: Comments for Function
+	%END REM
+	Public Function GetProcessInstance(procInstId As String) As ProcessInstance
+		Dim queryView As NotesView
+		Dim qdoc As NotesDocument
+		Dim qentry As NotesViewEntry
+		Dim procInst As ProcessInstance
+		Set queryView = Me.database.getView(QUERY_VIEW_PROCESS_INSTANCE_BY_ID)
+		
+		If queryView Is Nothing Then
+			Error 9900, "QUERY_VIEW_PROCESS_INSTANCE_BY_ID"
+		End If
+		
+		Set qentry = queryView.Getentrybykey(procInstId, True)
+		If Not qentry Is Nothing Then
+			Set qdoc = qentry.Document
+		Else
+			 Exit Function
+		End If
+		
+		Set procInst = New ProcessInstance
+		procInst.ID = qdoc.Getitemvalue("ID")(0)
+		procInst.ProcInstID = qdoc.Getitemvalue("ProcInstID")(0)
+		procInst.BusinessKey = qdoc.Getitemvalue("BusinessKey")(0)
+		procInst.ProcDefId = qdoc.Getitemvalue("ProcDefId")(0)
+		Set procInst.StartTime = qdoc.Getitemvalue("StartTime")(0)
+		Set procInst.EndTime = qdoc.Getitemvalue("EndTime")(0)
+		procInst.Duration = qdoc.Getitemvalue("Duration")
+		procInst.StartActId = qdoc.Getitemvalue("StartActId")(0)
+		Set procInst.StartUserId = New NotesName(qdoc.Getitemvalue("StartUserId")(0))
+		Let procInst.EndActId = qdoc.Getitemvalue("EndActId")
+		Let ProcInst.DeleteReason = qdoc.Getitemvalue("DeleteReason")
+		Let ProcInst.State = qdoc.Getitemvalue("State")
+		Set procInst.Parent = Me
+		
+		Set GetProcessInstance = procInst
+		
+	End Function
+	
+	%REM
+		Function GetExecution
+		Description: Comments for Function
+	%END REM
+	Public Function GetExecution(execId As String) As Execution
+		Dim queryView As NotesView
+		Dim qdoc As NotesDocument
+		Dim qentry As NotesViewEntry
+		Dim exec As Execution
+		Set queryView = Me.database.getView(QUERY_VIEW_EXECUTION_BY_ID)
+		
+		If queryView Is Nothing Then
+			Error 9900, "QUERY_VIEW_PROCESS_INSTANCE_BY_ID"
+		End If
+		
+		Set qentry = queryView.Getentrybykey(exec, True)
+		If Not qentry Is Nothing Then
+			Set qdoc = qentry.Document
+		Else
+			Exit Function
+		End If
+		
+		Set exec = New Execution
+		exec.ID = qdoc.Getitemvalue("ID")(0)
+		exec.ProcInstID = qdoc.Getitemvalue("ProcInstID")(0)
+		exec.BusinessKey = qdoc.Getitemvalue("BusinessKey")(0)
+		exec.ProcDefId = qdoc.Getitemvalue("ProcDefId")(0)
+		exec.ParentId = qdoc.Getitemvalue("ParentId")(0)
+		exec.ActId = qdoc.Getitemvalue("ActId")
+		exec.IsActive = qdoc.Getitemvalue("IsActive")(0)
+		exec.IsConcurrent = qdoc.Getitemvalue("IsConcurrent")(0)
+		Set exec.Parent = Me
+		
+		Set GetExecution = exec
+	End Function
+	
+	%REM
+    	Function createActivity
+    	Description: Comments for Function
+	%END REM
+	Public Function CreateActivity(exec As Execution, ActId As String) As ActivityInstance
+		Dim procDef As ProcessDefinition
+		Dim actDef As ActivityDefinition
+		Dim actInst As ActivityInstance
+		Dim defSrv As DefinitionService
+		
+		Set defSrv = Me.ParentEngine.GetDefinitionService()
+		Set actDef = defSrv.GetActivityDefinitionById(exec.ProcDefId, ActId)
+		
+		Set actInst = New ActivityInstance
+		actInst.ActId = ActId
+		actInst.ActName = actDef.Name
+		actInst.ActType = actDef.Type
+		actInst.ProcDefId = exec.ProcDefId
+		actInst.ProcInstId = exec.ProcInstID
+		Set actInst.Parent = Me
+		
+		Set CreateActivity = actInst
+		
+	End Function
+	
+	
+	%REM
+    	Function GetActivity
+    	Description: Comments for Function
+	%END REM
+	Public Function GetActivity(actId As String) As ActivityInstance
+		Dim queryView As NotesView
+		Dim qentry As NotesViewEntry
+		Dim qdoc As NotesDocument
+		Dim act As ActivityInstance
+		
+		Set queryView = Me.database.GetView(QUERY_VIEW_ACTIVITY_INSTANCE_BY_ID)
+		If queryView Is Nothing Then
+			Error 9900, "QUERY_VIEW_PROCESS_INSTANCE_BY_ID"
+		End If
+		
+		Set qentry = queryView.Getentrybykey(actId, True)
+		If Not qentry Is Nothing Then
+			Set qdoc = qentry.Document
+		Else
+			Exit Function
+		End If
+		 
+		Set act = New ActivityInstance
+		act.Id = qdoc.Getitemvalue("Id")(0) 
+		act.ProcDefId = qdoc.Getitemvalue("ProcDefId")(0) 
+		act.ProcInstId = qdoc.Getitemvalue("ProcInstId")(0) 
+		act.ExecutionId = qdoc.Getitemvalue("ExecutionId")(0) 
+		act.ActId = qdoc.Getitemvalue("ActId")(0) 
+		act.ActName = qdoc.Getitemvalue("ActName")(0)
+		act.ActType = qdoc.Getitemvalue("ActType")(0)
+		act.ActName = qdoc.Getitemvalue("ActName")(0)
+		act.Owner = qdoc.Getitemvalue("Owner")(0)
+		act.Assignee = qdoc.Getitemvalue("Assignee")(0)
+		Set act.StartTime = qdoc.Getitemvaluedatetimearray("StartTime")(0)
+		Set act.EndTime = qdoc.Getitemvaluedatetimearray("EndTime")(0)
+		act.Duration = qdoc.Getitemvaluedatetimearray("Duration")(0)
+		
+		Set act.Parent = Me
+		
+		Set GetActivity = act
+	End Function
+	
+	%REM
+		Function Signal
+		Description: Comments for Function
+	%END REM
+	Public Function Signal(executionId As String)
+		
+	End Function
+End Class
+
+
+
+
+%REM
+	Class TaskService
+	Description: Comments for Class
+%END REM
+Class TaskService
+	Private database As NotesDatabase
+	Public ParentEngine As SieyuanWorkflowEngine
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Public Sub New(srv As String, dbpath As String)
+		Set Me.database = New NotesDatabase("", "")
+		If Not Me.database.Open(srv, dbpath) Then
+			Error ERROR_NUMBER_ENGINE_DB_NOT_FOUND, ERROR_MSG_ENGINE_DB_NOT_FOUND
+		End If
+	End Sub
+	
+	%REM
+		Function NewTask
+		Description: Comments for Function
+	%END REM
+	Public Function NewTask() As Task
+	    Dim ntask As Task
+	    Set ntask = New Task
+	    
+	    Set ntask.CreateTime = New NotesDateTime(Now)
+	   	ntask.id = Me.ParentEngine.utility.GetRandomNumber()
+	   	
+	   	Set NewTask = ntask
+	End Function
+	
+	%REM
+		Function Complete
+		Description: Comments for Function
+	%END REM
+	Public Function Complete(taskId As String)
+		Dim task As Task
+		Dim executionId As String
+		Dim rtSrv As RuntimeService
+		
+		Set task = Me.GetTask(taskId)
+		executionId = task.ExecutionId
+		
+	    'FireEvent(EVENT_TASK_COMPLETE)
+	    Call Me.DeleteTask(taskId)
+	    
+	   Set rtSrv = Me.ParentEngine.GetRuntimeService()
+	   Call rtSrv.Signal(executionId)
+	    
+	End Function
+	
+	%REM
+		Function SaveTask
+		Description: Comments for Function
+	%END REM
+	Function SaveTask(task As Task) As Boolean
+	    Dim queryView As NotesView
+	    Dim qentry As NotesViewEntry
+	    Dim qdoc As NotesDocument
+	    
+	    
+		Set queryView = Me.database.GetView(QUERY_VIEW_TASK_BY_ID)
+		Set qentry = queryView.Getentrybykey(task.Id, True)
+		If qentry Is Nothing Then
+			Set qdoc = Me.database.createdocument
+			Call qdoc.Replaceitemvalue("Form", "TaskInstance")
+		Else
+			Set qdoc = qentry.Document
+		End If
+		
+		Call qdoc.Replaceitemvalue("ID", task.Id)
+		Call qdoc.Replaceitemvalue("ExecutionId", task.ExecutionId)
+		Call qdoc.Replaceitemvalue("ProcInstId", task.ProcInstId)
+		Call qdoc.Replaceitemvalue("ProcDefId", task.ProcDefId)
+		Call qdoc.Replaceitemvalue("TaskDefKey", task.TaskDefKey)
+		Call qdoc.Replaceitemvalue("Name", task.Name)
+		Call qdoc.Replaceitemvalue("ParentTaskId", task.ParentTaskId)
+		Call qdoc.Replaceitemvalue("Description", task.Description)
+		Call qdoc.Replaceitemvalue("Owner", task.Owner)
+		Call qdoc.Replaceitemvalue("Assignee", task.Assignee)
+		Call qdoc.Replaceitemvalue("DueDate", task.DueDate)
+		Call qdoc.Replaceitemvalue("Priority", task.Priority)
+		Call qdoc.Replaceitemvalue("CreateTime", task.CreateTime)
+		Call qdoc.Replaceitemvalue("Delegation", task.Delegation)
+		
+		SaveTask = qdoc.save(False, False)
+	End Function
+	
+	%REM
+		Function DeleteTask
+		Description: Comments for Function
+	%END REM
+	Function DeleteTask(taskId As String)
+		Dim queryView As NotesView
+		Dim qentry As NotesViewEntry
+		Dim qdoc As NotesDocument
+		
+		
+		Set queryView = Me.database.GetView(QUERY_VIEW_TASK_BY_ID)
+		Set qentry = queryView.Getentrybykey(taskId, True)
+		If Not qentry Is Nothing Then
+			Call qentry.Document.Remove(True)
+		End If
+		
+		
+	End Function
+	
+	%REM
+		Function DelegateTask
+		Description: Comments for Function
+	%END REM
+	Function DelegateTask(taskId As String, user As NotesName)
+	    Dim task As Task
+	    Set task = Me.GetTask(taskId)
+	    
+	    If task Is Nothing Then
+	    	Exit Function
+	    End If
+	    
+	    Call task.Delegate(user)
+	End Function
+	
+	%REM
+		Function SetOwner
+		Description: Comments for Function
+	%END REM
+	Function SetOwner(taskId As String, owner As NotesName) As Boolean
+	    Dim task As Task
+	    Set task = Me.GetTask(taskId)
+	    If task Is Nothing Then
+	    	Exit function
+	    End If
+	  	call task.SetOwner(owner)
+	End Function
+	
+	%REM
+		Function SetAssignee
+		Description: Comments for Function
+	%END REM
+	Function SetAssignee(taskId As String, assignee As NotesName)
+		Dim task As Task
+		Set task = Me.GetTask(taskId)
+		If task Is Nothing Then
+			Exit Function
+		End If
+		Call task.SetAssignee(assignee)
+	End Function
+	
+	
+	%REM
+		Function GetTask
+		Description: Comments for Function
+	%END REM
+	Public Function GetTask(taskid As String) As Task
+		Dim queryView As NotesView
+		Dim qentry As NotesViewEntry
+		Dim qdoc As NotesDocument
+		Dim qtask As Task
+		
+		Set queryView = Me.database.GetView(QUERY_VIEW_TASK_BY_ID)
+		Set qentry = queryView.Getentrybykey(taskId, True)
+		If Not qentry Is Nothing Then
+			Set qdoc = qentry.Document
+			Set qtask = New Task
+			qtask.id = qdoc.Getitemvalue("Id")(0)
+			qtask.ExecutionId = qdoc.Getitemvalue("ExecutionId")(0)
+			qtask.ProcInstId = qdoc.Getitemvalue("ProcInstId")(0)
+			qtask.ProcDefId = qdoc.Getitemvalue("ProcDefId")(0)
+			qtask.TaskDefKey = qdoc.Getitemvalue("TaskDefKey")(0)
+			qtask.Name = qdoc.Getitemvalue("Name")(0)
+			qtask.ParentTaskId = qdoc.Getitemvalue("ParentTaskId")(0)
+			qtask.Description = qdoc.Getitemvalue("Description")(0)
+			Set qtask.Owner = New NotesName(qdoc.Getitemvalue("Owner")(0))
+			Set qtask.Assignee =  New NotesName(qdoc.Getitemvalue("Assignee")(0))
+			Set qtask.DueDate = New NotesDateTime(qdoc.Getitemvalue("DueDate")(0))
+			qtask.Priority = qdoc.Getitemvalue("Priority")(0)
+			Set qtask.CreateTime = New NotesDateTime(qdoc.Getitemvalue("CreateTime")(0))
+			qtask.Delegation = qdoc.Getitemvalue("Delegation")(0)
+			
+			Set GetTask = qtask
+			
+		End If
+	End Function
+	
+End Class
+
+
+%REM
+	Class HistoryService
+	Description: Comments for Class
+%END REM
+Class HistoryService
+	Public Database As NotesDatabase
+	Public ParentEngine As SieyuanWorkflowEngine
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New(srv As String, dbpath As String)
+		Set Me.database = New NotesDatabase("", "")
+		If Not Me.database.Open(srv, dbpath) Then
+			Error ERROR_NUMBER_HISTORY_DB_NOT_FOUND, ERROR_MSG_HISTORY_DB_NOT_FOUND
+		End If
+	End Sub
+End Class
+
+
+%REM
+	Class SerialNumberService
+	Description: Comments for Class
+%END REM
+Class SerialNumberService
+	Private Database As NotesDatabase
+	Public ParentEngine As SieyuanWorkflowEngine
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New(srv As String, dbpath As String)
+		Set Me.Database = New NotesDatabase("", "")
+		If Not Me.Database.Open(srv, dbpath) Then
+			Error ERROR_NUMBER_ENGINE_DB_NOT_FOUND, ERROR_MSG_ENGINE_DB_NOT_FOUND
+		End If
+	End Sub
+End Class
+
+
+%REM
+	Class Todo
+	Description: Comments for Class
+%END REM
+Class TodoService
+    Private Database As NotesDatabase
+    Public ParentEngine As SieyuanWorkflowEngine
+    
+    %REM
+    	Sub New
+    	Description: Comments for Sub
+    %END REM
+    Sub New(srv As String, dbpath As String)
+        Set Me.Database = New NotesDatabase("", "")
+        If Not Me.Database.Open(srv, dbpath) Then
+            Error ERROR_NUMBER_TODO_DB_NOT_FOUND, ERROR_MSG_TODO_DB_NOT_FOUND
+        End If
+    End Sub
+End Class
+
+
+%REM
+	Class ProcessDefinition
+	Description: Comments for Class
+%END REM
+Class ProcessDefinition
+    Public Id As String
+    Public Category As String
+    Public Name As String
+    Public Key As String
+    Public Version As String
+    Public document As NotesDocument
+    
+    Public ApplicationDatabase As String
+    Public ApplicationServer As String
+    Public ApplicationForm As String
+    
+	Public HistoryServer As String
+	Public HistoryDatabase As String
+	
+	Public Parent As DefinitionService
+    %REM
+    	Sub new
+    	Description: Comments for Sub
+    %END REM
+    Public Sub New(doc As NotesDocument)
+    	
+    	If doc Is Nothing Then
+    		Exit sub
+    	End If
+    	Set Me.document = doc
+    	me.id = doc.Getitemvalue("Id")(0)
+    	me.Category = doc.Getitemvalue("Category")(0)
+    	me.name = doc.Getitemvalue("Name")(0)
+    	me.Key = doc.Getitemvalue("Key")(0)
+    	me.Version = doc.Getitemvalue("Version")(0)
+    	
+    	Me.ApplicationDatabase = doc.Getitemvalue("ApplicationDatabase")(0)
+    	Me.ApplicationServer = doc.Getitemvalue("ApplicationServer")(0)
+    	Me.ApplicationForm = doc.Getitemvalue("ApplicationForm")(0)
+    	
+    	Me.HistoryDatabase = doc.Getitemvalue("HistoryDatabase")(0)
+    	Me.HistoryServer = doc.Getitemvalue("HistoryServer")(0)
+    	
+    	
+    End Sub
+End Class
+
+
+%REM
+	Class ActivityDefinition
+	Description: Comments for Class
+%END REM
+Class ActivityDefinition
+    Public Id As String
+    Public Name As String
+    Public Type As String
+    Public Key As String
+    Public ProcDefId As String
+    
+    Public document As NotesDocument
+    
+    %REM
+    	Sub New
+    	Description: Comments for Sub
+    %END REM
+    Public Sub New(doc As NotesDocument)
+    	Me.Id = doc.Getitemvalue("Id")(0)
+    	Me.Name = doc.Getitemvalue("Name")(0)
+    	Me.Key = doc.Getitemvalue("Key")(0)
+    	Me.ProcDefId = doc.Getitemvalue("PROC_DEF_ID")(0)
+    	Me.Type = doc.Getitemvalue("Type")(0)
+    	Set me.document = doc
+    End Sub
+    
+End Class
+
+
+%REM
+	Class Execution
+	Description: Comments for Class
+%END REM
+Class Execution
+	Public ID As String
+	Public ProcInstID As String
+	Public BusinessKey As String
+	Public ProcDefId As String
+	Public ParentId As String
+	Public ActId As String
+	Public IsActive As Boolean
+	Public IsConcurrent As Boolean
+	Public Parent As RuntimeService
+	Private activity As ActivityInstance
+	Public AutoSave As Boolean
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Public Sub New
+		Me.AutoSave = True
+	End Sub
+	
+	Public Sub Delete
+		If AutoSave Then
+			Call Me.Save()
+		End If
+	End Sub
+	
+	%REM
+		Function GetProcessInstance
+		Description: Comments for Function
+	%END REM
+	Public Function GetProcessInstance
+		
+		Set GetProcessInstance = Me.Parent.GetProcessInstance(Me.ProcInstID)
+		
+	End Function
+	
+    %REM
+    	Function GetActivity
+    	Description: Comments for Function
+    %END REM
+    Public Function GetActivity As ActivityInstance
+    	If Me.activity Is Nothing Then
+	    	Set GetActivity = Me.Parent.GetActivity(Me.ActId)
+    	Else
+    		Set GetActivity = Me.activity
+    	End If
+    	
+    	
+    End Function
+    
+    %REM
+    	Function SetActvity
+    	Description: Comments for Function
+    %END REM
+    Public Function SetActvity(actInst As ActivityInstance)
+    	Set Me.activity = actInst
+    	Me.ActId = actInst.ActId
+    End Function
+    
+    %REM
+    	Function Take
+    	Description: Comments for Function
+    %END REM
+    Public Function Take(transition As Transition )
+		Dim sourceAct As ActivityInstance
+		Dim DestAct As ActivityInstance
+		
+		Set sourceAct = transition.GetSourceActivity()
+		Set DestAct = transition.GetDestinationActivity()
+		
+		'call sourceAct.End()
+		
+		'Execution.SetActivity(DestAct)
+		
+		'Call DestAct.Start()
+		
+    End Function
+    
+    %REM
+    	Function Signal
+    	Description: Comments for Function
+    %END REM
+    Public Function Signal(signalName As String, variables As Variant)
+    	Dim currAct As ActivityInstance
+    	
+    	Set currAct = Me.GetActivity()
+    	
+    	If currAct.OutgoingTransition Is Nothing Then
+    		Call Me.TakeDefault()
+    	Else
+    		Call me.Take(currAct.OutgoingTransition)
+    	End If
+    End Function
+    
+    %REM
+    	Function TakeDefault
+    	Description: Comments for Function
+    %END REM
+    Public Function TakeDefault
+
+    	Dim outgoingTrans As Transition
+    	
+    	Set outgoingTrans = Me.GetDefaultOutgoingTransition()
+    	Set takeDefault = Me.Take(outgoingTrans)
+    	
+    End Function
+    
+    %REM
+    	Function GetDefaultOutgoingTransition
+    	Description: Comments for Function
+    %END REM
+    Public Function GetDefaultOutgoingTransition
+    	Dim sourceActivity As ActivityInstance
+    	Dim actDef As ActivityDefinition
+    	Dim destActivity As ActivityInstance
+    	Dim OutGoingTrans As Transition
+    	
+    	Set OutGoingTrans = New Transition
+    	Set sourceActivity = Me.GetActivity()
+    	Set actDef = sourceActivity.GetActivityDefinition()
+    	Set destActivity = Me.Parent.CreateActivity(Me, actDef.Id)
+    	
+    	Call OutGoingTrans.SetDestinationActivity(destActivity)
+    	Call OutGoingTrans.SetSourceActivity(sourceActivity)
+    	
+    	Set GetDefaultOutgoingTransition = OutGoingTrans
+    	
+    End Function
+    
+    %REM
+    	Function Save
+    	Description: Comments for Function
+    %END REM
+    Public Function Save
+    	Dim queryView As NotesView
+    	Dim qentry As NotesViewEntry
+    	Dim qdoc As NotesDocument
+    	
+	    Set queryView = Me.Parent.database.GetView(QUERY_VIEW_EXECUTION_BY_ID)
+	    Set qentry = queryView.Getentrybykey(me.ID, True)
+	    If qentry Is Nothing Then
+	    	Set qdoc = me.Parent.database.CreateDocument
+	    	Call qdoc.Replaceitemvalue("Form", "Execution")
+	    Else
+	    	Set qdoc = qentry.Document
+	    	
+	    End If
+	    
+	    Call qdoc.Replaceitemvalue("Id", Me.ID)
+	    Call qdoc.Replaceitemvalue("ProcInstId", Me.ProcInstID)
+	    Call qdoc.Replaceitemvalue("Business", Me.BusinessKey)
+	    Call qdoc.Replaceitemvalue("ProcDefId", Me.ProcDefId)
+	    Call qdoc.Replaceitemvalue("ParentId", Me.ParentId)
+	    Call qdoc.Replaceitemvalue("ActId", Me.ActId)
+	    Call qdoc.Replaceitemvalue("IsActive", Me.IsActive)
+	    call qdoc.Replaceitemvalue("IsConcurrent", Me.IsConcurrent)
+	    
+    	Save = qdoc.save(False, False)
+    End Function
+    
+
+    
+    
+End Class
+
+
+%REM
+	Class ProcessInstance
+	Description: Comments for Class
+%END REM
+Class ProcessInstance 
+	Public Id As String
+	Public ProcDefId As String
+	Public ProcInstId As String
+	Public BusinessKey As String
+
+    Public StartTime As NotesDateTime
+    Public EndTime As NotesDateTime
+    Public Duration As Long
+    Public StartUserId As NotesName
+    Public StartActId As String
+    Public EndActId As String
+    Public DeleteReason As String
+    Public State As String
+    Public Parent As RuntimeService
+    %REM
+    	Sub New
+    	Description: Comments for Sub
+    %END REM
+    Public Sub New
+
+    End Sub
+    
+    %REM
+    	Function Save
+    	Description: Comments for Function
+    %END REM
+    Public Function Save
+	    Dim queryView As NotesView
+	    Dim qentry As NotesViewEntry
+	    Dim qdoc As NotesDocument
+	    Dim hsrv As HistoryService
+	    Dim hdb As NotesDatabase
+	    
+	    Set hsrv = me.Parent.ParentEngine.GetHistoryService(me.ProcDefId)
+	    Set hdb = hsrv.Database
+	    
+	    Set queryView = hdb.GetView(QUERY_VIEW_PROCESS_INSTANCE_BY_ID)
+	    Set qentry = queryView.Getentrybykey(me.ID, True)
+	    If qentry Is Nothing Then
+		    Set qdoc = me.Parent.database.CreateDocument
+		    Call qdoc.Replaceitemvalue("Form", "ProcessInstance")
+	    Else
+		    Set qdoc = qentry.Document
+		    
+	    End If
+	    
+	    Call qdoc.Replaceitemvalue("Id", Me.ID)
+	    Call qdoc.Replaceitemvalue("ProcInstId", Me.ProcInstID)
+	    Call qdoc.Replaceitemvalue("Business", Me.BusinessKey)
+	    Call qdoc.Replaceitemvalue("ProcDefId", Me.ProcDefId)
+	    Call qdoc.Replaceitemvalue("StartTime", Me.StartTime)
+	    Call qdoc.Replaceitemvalue("EndTime", Me.EndTime)
+	    Call qdoc.Replaceitemvalue("Duration", Me.Duration)
+	    Call qdoc.Replaceitemvalue("StartUserId", Me.StartUserId)
+	    Call qdoc.Replaceitemvalue("StartActId", Me.StartActId)
+	    Call qdoc.Replaceitemvalue("EndActId", Me.EndActId)
+	    Call qdoc.Replaceitemvalue("DeleteReason", Me.DeleteReason)
+	    Call qdoc.Replaceitemvalue("State", Me.State)
+	    
+	    Save = qdoc.save(False, False)
+    End Function
+     
+    %REM
+    	Function CreateExecution
+    	Description: Comments for Function
+    %END REM
+    Public Function CreateExecution(execId As String) As Execution
+    	Dim exec As Execution
+    	Set exec = New Execution
+    	exec.ID = me.Parent.ParentEngine.utility.GetRandomNumber()
+    	exec.ProcInstID = Me.ProcInstId
+    	exec.ProcDefId = Me.ProcDefId
+    	
+    	Set CreateExecution = exec
+    	
+    End Function
+End Class
+
+
+%REM
+	Class ActivityInstance
+	Description: Comments for Class
+%END REM
+Class ActivityInstance
+    Public Id As String
+    Public ProcInstId As String
+    Public ProcDefId As String
+    Public ExecutionId As String
+    Public ActId As String
+    Public ActName As String
+    Public ActType As String
+    Public Owner As String
+    Public Assignee As String
+    Public StartTime As NotesDateTime
+    Public EndTime As NotesDateTime
+    Public Duration As Long
+    Public State As String
+    Public Parent As RuntimeService
+    Public OutgoingTransition As Transition
+    
+    Public AutoSave As Boolean
+    
+   %REM
+   	Sub new
+   	Description: Comments for Sub
+   %END REM
+   Public Sub New
+   		Me.AutoSave = True
+   End Sub
+   
+   Public Sub Delete
+   		If Me.AutoSave Then
+   			Call Me.Save()
+   		End If
+   End Sub
+    
+    %REM
+    	Function GetActivityDefinition
+    	Description: Comments for Function
+    %END REM
+    Public Function GetActivityDefinition As ActivityDefinition
+    	Dim defSrv As DefinitionService
+    	Dim ad As ActivityDefinition
+    	
+    	Set defSrv = Me.Parent.ParentEngine.GetDefinitionService()
+    	Set ad = defSrv.GetActivityDefinitionById(Me.ProcDefId, Me.ActId)
+    	
+    	Set GetActivityDefinition = ad
+    	
+    End Function
+    
+    %REM
+    	Function SetOutgoingTransition
+    	Description: Comments for Function
+    %END REM
+    Public Function SetOutgoingTransition(transition As Transition)
+  		Set Me.OutgoingTransition = transition
+    End Function
+    
+    %REM
+    	Function GetOutgoingTransition
+    	Description: Comments for Function
+    %END REM
+    Public Function GetOutgoingTransition As Transition
+    	If Me.OutgoingTransition Is Nothing Then
+    		Set GetOutgoingTransition = Me.GetDefaultOutgoingTransition()
+    	Else
+    		Set GetOutgoingTransition = Me.OutgoingTransition
+    	End If
+    End Function
+    
+    %REM
+    	Function GetDefaultOutgoingTransition
+    	Description: Comments for Function
+    %END REM
+    Private Function GetDefaultOutgoingTransition As Transition
+    	
+    End Function
+    
+    %REM
+    	Function Complete
+    	Description: Comments for Function
+    %END REM
+    Public Function Complete
+    	
+		Set Me.EndTime = New NotesDateTime(Now)
+		Me.Duration = Me.StartTime.Timedifference(Me.EndTime)
+		Me.State = "Completed"
+
+    End Function
+    
+    %REM
+    	Function Start
+    	Description: Comments for Function
+    %END REM
+    Public Function Start
+    	Set Me.StartTime = New NotesDateTime(Now)
+    	Me.state = "Inactive"
+    End Function
+    
+    
+    %REM
+    	Function Save
+    	Description: Comments for Function
+    %END REM
+    Public Function Save
+		
+    	Dim queryView As NotesView
+    	Dim qentry As NotesViewEntry
+    	Dim qdoc As NotesDocument
+	    Dim hsrv As HistoryService
+	    Dim hdb As NotesDatabase
+	    
+	    Set hsrv = me.Parent.ParentEngine.GetHistoryService(me.ProcDefId)
+	    Set hdb = hsrv.Database
+    	
+    	
+    	
+	    Set queryView = hdb.getview(QUERY_VIEW_ACTIVITY_INSTANCE_BY_ID)
+	    Set qentry = queryView.Getentrybykey(Me.Id, True)
+	    
+	    If qentry Is Nothing Then
+	    	Set qdoc = me.Parent.database.createDocument
+	    	Call qdoc.Replaceitemvalue("Form", "ActivityInstance")
+	    Else
+	    	Set qdoc = qentry.Document
+	    End If
+	    
+	    Call qdoc.Replaceitemvalue("Id", Me.Id)
+	    Call qdoc.Replaceitemvalue("ProcDefId", Me.ProcDefId)
+	    Call qdoc.Replaceitemvalue("ProcInstId", Me.ProcInstId)
+	    Call qdoc.Replaceitemvalue("ExecutionId", Me.ExecutionId)
+	    Call qdoc.Replaceitemvalue("ActId", Me.ActId)
+	    Call qdoc.Replaceitemvalue("ActName", Me.ActName)
+	    Call qdoc.Replaceitemvalue("ActType", Me.ActType)
+	    Call qdoc.Replaceitemvalue("Owner", Me.Owner)
+	    Call qdoc.Replaceitemvalue("Assignee", Me.Assignee)
+	    Call qdoc.Replaceitemvalue("StartTime", Me.StartTime)
+	    Call qdoc.Replaceitemvalue("EndTime", Me.EndTime)
+	    Call qdoc.Replaceitemvalue("Duration", Me.Duration)
+
+		save = qdoc.Save(False, False)
+    End Function
+    
+    %REM
+    	Function EndActivity
+    	Description: Comments for Function
+    %END REM
+    Public Function EndActivity
+    	Set Me.EndTime = New NotesDateTime(Now)
+    End Function
+    
+    %REM
+    	Function StartActivity
+    	Description: Comments for Function
+    %END REM
+    Public Function StartActivity
+    	
+    	Select Case Me.ActType
+    		Case "Step":
+    			
+    		Case "HybridRouting":
+    			
+    	End Select
+    End Function
+    
+    
+    
+End Class
+
+
+%REM
+	Class Task
+	Description: Comments for Class
+%END REM
+Class Task
+    Public Id As String
+    Public ExecutionId As String
+    Public ProcInstId As String
+    Public ProcDefId As String
+    Public TaskDefKey As String
+    Public Name As String
+    Public ParentTaskId As String
+    Public Description As String
+    Public Owner As NotesName
+    Public Assignee As NotesName
+    Public DueDate As NotesDateTime
+    Public Priority As Integer
+    Public CreateTime As NotesDateTime
+    Public Delegation As String
+    Public AutoSave As Boolean
+    Public Parent As TaskService
+    
+    %REM
+    	Sub New
+    	Description: Comments for Sub
+    %END REM
+    Public Sub New
+    	Me.AutoSave = True
+    End Sub
+    
+    Public Sub Delete
+    	If Me.AutoSave Then
+    		Call Me.Save()
+    	End If
+    End Sub
+    
+    %REM
+    	Function SetOwner
+    	Description: Comments for Function
+    %END REM
+    Public Function SetOwner(owner As NotesName)
+    	Set Me.Owner = owner
+    End Function
+    
+    %REM
+    	Function SetAssignee
+    	Description: Comments for Function
+    %END REM
+    Public Function SetAssignee(assignee As NotesName)
+    	Set Me.Assignee = assignee
+    End Function
+    
+    %REM
+    	Function Delegate
+    	Description: Comments for Function
+    %END REM
+    Public Function Delegate(user As NotesName)
+    	If Me.Owner Is Nothing Then
+    		Set Me.Owner = Me.Assignee
+    	End If
+    	
+    	Set Me.Assignee = user
+    	Me.Delegation = "Pending"
+    	
+    End Function
+    %REM
+    	Function Save
+    	Description: Comments for Function
+    %END REM
+    Public Function Save As Boolean
+    	If Me.Parent Is Nothing Then
+    		Exit Function
+    	End If
+    	
+		Save = Me.Parent.SaveTask(Me)
+		
+    End Function
+
+End Class
+
+
+%REM
+	Class Transition
+	Description: Comments for Class
+%END REM
+
+Class Transition
+    
+    Private Source As ActivityInstance
+    
+    Private Destination As ActivityInstance
+    
+    %REM
+    	Function SetSourceActivity
+    	Description: Comments for Function
+    %END REM
+    Public Function SetSourceActivity (activity As ActivityInstance)
+    	Set Me.Source = activity
+    End Function
+    
+    %REM
+    	Function SetDestinationActivity
+    	Description: Comments for Function
+    %END REM
+    Public Function SetDestinationActivity (activity As ActivityInstance)
+    	Set Me.Destination = activity
+    End Function
+    
+    %REM
+    	Function GetSourceActivity
+    	Description: Comments for Function
+    %END REM
+    Public Function GetSourceActivity As ActivityInstance
+    	Set GetSourceActivity = Me.Source
+    End Function
+    
+    %REM
+    	Function GetDestinationActivty
+    	Description: Comments for Function
+    %END REM
+    Public Function GetDestinationActivity As ActivityInstance
+    	Set GetDestinationActivity = Me.Destination
+    End Function
+    
+    
+End Class
+
+%REM
+	Class IdentityService
+	Description: Comments for Class
+%END REM
+Class IdentityService
+	Private CurrentUser As User
+	
+	%REM
+		Function GetCurrentUser
+		Description: Comments for Function
+	%END REM
+	Function GetCurrentUser
+		If Not Me.CurrentUser Is Nothing Then
+			Set GetCurrentUser = Me.CurrentUser
+			
+		Else
+			
+			
+			
+		End If
+	End Function
+	
+	%REM
+		Function SetCurrentUser
+		Description: Comments for Function
+	%END REM
+	Function SetAsCurrentUser(username As NotesName)
+		
+	End Function
+End Class
+
+
+%REM
+	Class User
+	Description: Comments for Class
+%END REM
+Class User
+	Public NotesName As NotesName
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New(nn As NotesName)
+		Set Me.NotesName = nn
+	End Sub
+	%REM
+		Function IsAdministrator
+		Description: Comments for Function
+	%END REM
+	Public Function IsAdministrator
+		
+	End Function
+	
+	%REM
+		Function GetDbAccessLevel
+		Description: Comments for Function
+		Return:
+			ACLLEVEL_NOACCESS (0) 
+			ACLLEVEL_DEPOSITOR (1) 
+			ACLLEVEL_READER (2) 
+			ACLLEVEL_AUTHOR (3) 
+			ACLLEVEL_EDITOR (4) 
+			ACLLEVEL_DESIGNER (5) 
+			ACLLEVEL_MANAGER (6) 
+	%END REM
+	Public Function GetDbAccessLevel(db As NotesDatabase) As Integer
+		
+		GetDbAccessLevel = db.Queryaccess(Me.NotesName.Abbreviated)
+		
+	End Function
+	
+	%REM
+		Function GetDbAccessPrivileges
+		Description: Comments for Function
+		pama:
+		* db NotesDatabase
+		* privileges Integer
+			DBACL_CREATE_DOCUMENTS (1) 
+			DBACL_DELETE_DOCUMENTS (2) 
+			DBACL_CREATE_PRIV_AGENTS (4) 
+			DBACL_CREATE_PRIV_FOLDERS_VIEWS (8) 
+			DBACL_CREATE_SHARED_FOLDERS_VIEWS (16) 
+			DBACL_CREATE_SCRIPT_AGENTS (32) 
+			DBACL_READ_PUBLIC_DOCUMENTS (64) 
+			DBACL_WRITE_PUBLIC_DOCUMENTS (128) 
+			DBACL_REPLICATE_COPY_DOCUMENTS (256) 
+			
+	%END REM
+	Public Function GetDbAccessPrivileges(db As NotesDatabase, privileges) As Long
+		Dim dbPriv As Long
+		
+		dbPriv = db.Queryaccessprivileges(Me.NotesName.Abbreviated)
+		
+		If (dbPriv And privileges) > 0 Then
+			GetDbAccessPrivileges = True
+		End If
+	End Function
+	
+	%REM
+		Function GetDbRoles
+		Description: Comments for Function
+	%END REM
+	Public Function GetDbAccessRoles(db As NotesDatabase) As Variant
+		GetDbAccessRoles = db.Queryaccessroles(Me.NotesName.Abbreviated)
+	End Function
+	
+	%REM
+		Function IsRoleMemeber
+		Description: Comments for Function
+	%END REM
+	Public Function IsRoleMember(RoleId As String)
+		
+	End Function
+	
+End Class
+
+
+%REM
+	Class SWEUtility
+	Description: Comments for Class
+%END REM
+Class SWEUtility
+	Public Function GetRandomNumber() As String
+		Dim rVal As Variant
+		rVal = Evaluate("@unique")
+		rVal = Right(rval(0), 6)
+		rval = rVal+ Right(Format(Rnd(), ".0000"), 4)
+		GetRandomNumber = rval
+	End Function
+End Class
+
+
+%REM
+	Class ActivityEvent
+	Description: Comments for Class
+%END REM
+Class ActivityEvent
+	Public ActName As String
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Sub New(activityName As String)
+		Me.ActName = activityName
+	End Sub
+	
+	%REM
+		Function AfterCompleted
+		Description: Comments for Function
+	%END REM
+	Public Function PostCompleted
+		
+	End Function
+End Class
+
+
+%REM
+	Class TaskEvent
+	Description: Comments for Class
+%END REM
+Class TaskEvent
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Public Sub New
+		
+	End Sub
+	
+	%REM
+		Function PostComplete
+		Description: Comments for Function
+	%END REM
+	Private Function PostComplete
+		
+	End Function
+	
+	%REM
+		Function QueryComplete
+		Description: Comments for Function
+	%END REM
+	Private Function QueryComplete
+		
+	End Function
+End Class

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1a6" sequence="3" unid="C7DCB31C1B88B6F048257A6100275034">
+<created><datetime>20120821T150924,36+08</datetime></created>
+<modified><datetime>20120926T131134,55+08</datetime></modified>
+<revised><datetime>20120926T131134,54+08</datetime></revised>
+<lastaccessed><datetime>20120926T131134,55+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131134,51+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$TITLE"><text>disk_white.gif</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120821T154150,66+08</datetime></item>
+<item name="$Flags"><text>34CiQP</text></item>
+<item name="$ImageNames" sign="true"><text>disk_white.gif</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

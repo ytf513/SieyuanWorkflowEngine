@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A85001C85C1'>
+<noteinfo noteid='16e' unid='C20F0CF67035997048257A790024F590' sequence='2'>
+<created><datetime>20120914T144341,60+08</datetime></created>
+<modified><datetime>20120926T131133,83+08</datetime></modified>
+<revised><datetime>20120926T131133,82+08</datetime></revised>
+<lastaccessed><datetime>20120926T131133,83+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131133,81+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+kAACABAAAgBJRAUAAgBJRAMABQAeABkAAwACAAkABABJRCRDb25mbGljdCRSRUYABAAEAAAASAAF
+AAQARm9ybQEADAATwfcTs8wTtqgT0uUKAgQABQAEAEZvcm0BABEAUHJvY2Vzc0RlZmluaXRpb24A
+CgIEAB0CBAADAAcAFAAOAAkzUzRTNlM3UzlTMTBT
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+BgAAAABE
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQABAAEACAAAAFZDAAACAAIAEgAAAFAAAQAACgAAAAAAAAAAAAICAAAASURJRBIAAgAQAAIASUQF
+AAIASUQDACYAAQAAAAEBAAkBAAAKAQEOCgAAAQCtKwEAAQABAAAAAAAAAAAAV0MBAQAJAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAA//8AAAAAAAAAAAAAAAAAAEIAAAAAAAEA////AAUA////AAEAAAAA
+AAAAAAAAAAAAAQD///8AAQD///8AAAABAAAAAAABAAAAAAABAAAAAAAAAAgAAAAAAAEA
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>PY</text></item>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8qAAAAAAABAB4AE8H3E7PME7aoE9LlfFByb2Nlc3NEZWZpbml0aW9u
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>(ProcessDefinitionById)|RE_PROCDEF_ID</text></item>
+<item name='$DesignerVersion' sign='true'><text>7</text></item></note>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ae" sequence="3" unid="7CF7DC238AB68E2948257A610020345C">
+<created><datetime>20120821T135145,56+08</datetime></created>
+<modified><datetime>20120926T131134,67+08</datetime></modified>
+<revised><datetime>20120926T131134,66+08</datetime></revised>
+<lastaccessed><datetime>20120926T131134,67+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131134,63+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$TITLE"><text>bgnoise.gif</text></item>
+<item name="$Flags"><text>34CiQP</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120428T094505,80+08</datetime></item>
+<item name="$ImageNames" sign="true"><text>bgnoise.gif</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

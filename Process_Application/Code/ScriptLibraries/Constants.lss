@@ -1,0 +1,50 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+%REM
+	Library Constants
+	Created Sep 24, 2012 by 沈少尘 20947/siyuan
+	Description: Comments for Library
+%END REM
+Option Public
+Option Declare
+
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+'* Engine version
+Const SWE_VERSION = "0.1"
+
+'* Error 9000 message
+Const ERROR_NUMBER_ENGINE_DB_NOT_FOUND = 9000
+Const ERROR_MSG_ENGINE_DB_NOT_FOUND = "无法打开流程引擎数据库"
+'* Error 9001 message
+Const ERROR_NUMBER_DEFINITION_DB_NOT_FOUND = 9001
+Const ERROR_MSG_DEFINITION_DB_NOT_FOUND = "无法打开流程定义数据库"
+'* Error 9002 message
+Const ERROR_NUMBER_TODO_DB_NOT_FOUND = 9002
+Const ERROR_MSG_TODO_DB_NOT_FOUND = "无法打开代办数据库"
+'* Error 9003 message
+Const ERROR_NUMBER_HISTORY_DB_NOT_FOUND = 9003
+Const ERROR_MSG_HISTORY_DB_NOT_FOUND = "无法打开日志数据库"
+
+'* Error 9011 message
+Const ERROR_NUMBER_PROC_DEF_NOT_FOUND = 9011
+Const ERROR_MSG_PROC_DEF_NOT_FOUND = "找不到流程定义"
+'* Error 9012 message
+Const ERROR_NUMBER_START_EVENT_NOT_FOUND = 9012
+Const ERROR_MSG_START_EVENT_NOT_FOUND = "找不到开始事件定义"
+
+
+'* Activity type
+Const ACTIVITY_STANDARD_START_EVENT = 100
+Const ACTIVITY_STANDARD_END_EVENT = 150
+
+'View Name For Quering
+Const QUERY_VIEW_PROCESS_DEFINITION_BY_Key = "ProcessDefinitionByKey"
+Const QUERY_VIEW_PROCESS_DEFINITION_BY_ID = "ProcessDefinitionById"
+Const QUERY_VIEW_PROCESS_DEFINITION_BY_FORM ="ProcessDefinitionByForm"
+Const QUERY_VIEW_PROCESS_INSTANCE_BY_ID = "ProcessInstanceById"
+Const QUERY_VIEW_EXECUTION_BY_ID = "ExecutionById"
+Const QUERY_VIEW_ACTIVITY_DEFINITION_BY_ID = "ActivityDefinitionById"
+Const QUERY_VIEW_ACTIVITY_INSTANCE_BY_ID = "ActivityInstanceById"
+Const QUERY_VIEW_TASK_BY_ID = "TaskById"

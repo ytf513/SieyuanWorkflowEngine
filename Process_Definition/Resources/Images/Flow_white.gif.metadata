@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ce" sequence="3" unid="641F1427F5C01DC848257A61002CF439">
+<created><datetime>20120821T161101,05+08</datetime></created>
+<modified><datetime>20120926T131135,15+08</datetime></modified>
+<revised><datetime>20120926T131135,14+08</datetime></revised>
+<lastaccessed><datetime>20120926T131135,15+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131135,11+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$TITLE"><text>Flow_white.gif</text></item>
+<item name="$Flags"><text>34CiQP</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120821T160946,72+08</datetime></item>
+<item name="$ImageNames" sign="true"><text>Flow_white.gif</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1aa" sequence="4" unid="C76C4FC7E2B38F1B48257A5A000D6F84">
+<created><datetime>20120814T102645,16+08</datetime></created>
+<modified><datetime>20120928T092126,05+08</datetime></modified>
+<revised><datetime>20120928T092126,04+08</datetime></revised>
+<lastaccessed><datetime>20120928T092126,05+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131134,57+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$WebBrowserCompatible"><number>1</number></item>
+<item name="$ImagesWide"><number>4</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120814T113051,37+08</datetime></item>
+<item name="$Flags"><text>34CiQPv</text></item>
+<item name="$ImageNames" sign="true"><text>button-yellow.gif</text></item>
+
+
+
+
+
+
+<item name="$TITLE" sign="true"><textlist><text>ActionBar-Button</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>

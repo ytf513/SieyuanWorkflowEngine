@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='view' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A85001C85C1'>
+<noteinfo noteid='166' unid='3040628B741B8AE248257A7900231DAD' sequence='2'>
+<created><datetime>20120914T142333,57+08</datetime></created>
+<modified><datetime>20120926T131133,75+08</datetime></modified>
+<revised><datetime>20120926T131133,74+08</datetime></revised>
+<lastaccessed><datetime>20120926T131133,75+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131133,73+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
+<item name='$Index' sign='true'><text/></item>
+<item name='$Formula' summary='true' sign='true'><formula compiled='true'>
+sAACACQADABQUk9DX0lOU1RfSUQFAAwAUFJPQ19JTlNUX0lEAwAFACgAIwADAAwACQAEAFBST0Nf
+SU5TVF9JRCRDb25mbGljdCRSRUYABAAEAAAAUAAFAAQARm9ybQEADwBQcm9jZXNzSW5zdGFuY2UA
+CgIFABMAUHJvY2Vzc0RlZmluaXRpb25JZAAFAAsARXhlY3V0aW9uSUQACgIcAgMABwAOAAgACUwx
+UzRTNVM=
+</formula></item>
+<item name='$Collation' summary='true'>
+<rawitemdata type='2'>
+GQABAABEAGYAAAAMAFBST0NfSU5TVF9JRA==
+</rawitemdata></item>
+<item name='$ViewFormat' summary='true' sign='true'>
+<rawitemdata type='5'>
+AQABAAEACAAAAFZDAQAMAAwAJgAAAHIAAQAACgAAAAAAAAAAAAICAAAAUFJPQ19JTlNUX0lEUFJP
+Q19JTlNUX0lEJgACACQADABQUk9DX0lOU1RfSUQFAAwAUFJPQ19JTlNUX0lEAwAmAAEAAAABAQAJ
+AQAACgEBDgoAAAEArSsBAAEAAQAAAAAAAAAAAFdDAQEACQAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AP//AAAAAAAAAAAAAAAAAABCAAAAAAABAP///wAFAP///wABAAAAAAAAAAAAAAAAAAEA////AAEA
+////AAAAAQAAAAAAAQAAAAAAAQAAAAAAAAAIAAAAAAABAA==
+</rawitemdata></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$Flags'><text>PY</text></item>
+<item name='$TITLE' sign='true'><text>(ProcessInstanceByPIID)|HI_PROCINST_PIID</text></item>
+<item name='$DesignerVersion' sign='true'><text>7</text></item></note>
+

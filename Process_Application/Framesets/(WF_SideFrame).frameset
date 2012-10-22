@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A930001D57A'>
+<noteinfo noteid='16a' unid='D005BC159D9D050348257A930004C7AC' sequence='3'>
+<created><datetime>20121010T085212,60+08</datetime></created>
+<modified><datetime>20121010T085233,56+08</datetime></modified>
+<revised><datetime>20121010T085233,55+08</datetime></revised>
+<lastaccessed><datetime>20121010T085233,56+08</datetime></lastaccessed>
+<addedtofile><datetime>20121010T085213,72+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$TITLE' sign='true'><text>(WF_SideFrame)</text></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$FrameSet' sign='true'>
+<rawitemdata type='1'>
+7/8YAAIABgAAAAAAAAAAAAAAAAAAAAAA8P9CAEUAAAAAAAAAAAABAAEAAAAAAAUAAAAAAAUAAAAA
+AAEAAwAAAAAAAQCysrIAAAADAAEAAQAFAAIAZAABAAUA8f80ABEAAAAAQAABAgABAAEAAAAAAAAA
+AAAAAAEAsrKyAAAAAQD///9AAQAACgEAAAAAQPb/MQAAAAAAAwAHAA8AAAAAAAAAAAAAAAAAAAAA
+AAAAAAAoV0ZfQmFja2dyb3VuZCk/8P8+AAEAAAAAAAAAAAABAAEAAAAAAAUAAAAAAAUAAAAAAAIA
+AQAAAAAABQCysrIAAAADAAEAAQABAAMAAQDx/zQAEQAAAABAAAADAAEAAQAAAAAAAAAAAAAAAQCy
+srIAAAABAP///0ABAAAKAQCAgIBA9v8xAAAAAAADAAYADwAAAAAAAAAAAAAAAAAAAAAAAAAAAChX
+Rl9CYXNpY0ZyYW1lKT/x/zQAEQAAAABAAAECAAEAAQAAAAAAAAAAAAAAAQCysrIAAAABAP///0AB
+AAAKAQAAAABA8f80ABEAAAAAQAABAgABAAEAAAAAAAAAAAAAAAEAsrKyAAAAAQD///9AAQAACgEA
+AAAAQPb/MQAAAAAAAwAHAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAoV0ZfQmFja2dyb3VuZCk/
+</rawitemdata></item>
+<item name='$DesignerVersion'><text>7</text></item>
+<item name='$Flags'><text>#34CQ</text></item></note>
+

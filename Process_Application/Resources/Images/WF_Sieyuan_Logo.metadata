@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A930001D57A" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18a" sequence="1" unid="1D66CE53A7F1446B48257A9300050B44">
+<created><datetime>20121010T085505,64+08</datetime></created>
+<modified><datetime>20121010T085506,62+08</datetime></modified>
+<revised><datetime>20121010T085506,61+08</datetime></revised>
+<lastaccessed><datetime>20121010T085506,62+08</datetime></lastaccessed>
+<addedtofile><datetime>20121010T085506,62+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime>20120222T170954,40+08</datetime></item>
+<item name="$ImageNames" sign="true"><text>SieyuanrLOGO.gif</text></item>
+<item name="$TITLE" sign="true"><textlist><text>WF_Sieyuan_Logo</text></textlist></item>
+<item name="$DesignerVersion"><text>7</text></item>
+<item name="$Flags"><text>34CiQP</text></item></note>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A85001C85C1" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="196" sequence="3" unid="BFEA4B5C95A1FC4548257A6200227D4A">
+<created><datetime>20120822T141642,98+08</datetime></created>
+<modified><datetime>20120926T131134,31+08</datetime></modified>
+<revised><datetime>20120926T131134,30+08</datetime></revised>
+<lastaccessed><datetime>20120926T131134,31+08</datetime></lastaccessed>
+<addedtofile><datetime>20120926T131134,27+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$Flags"><text>D34CiQP</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime>20120822T141451,45+08</datetime></item>
+<item name="$ImageNames" sign="true"><text>routing_Black.gif</text></item>
+<item name="$TITLE" sign="true"><textlist><text>routing_Black.gif</text><text>HybirdRouting</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>
