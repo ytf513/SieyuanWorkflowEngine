@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A930001D57A" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ce" sequence="6" unid="0B015BB9E214D92548257A9F00274222">
+<created><datetime>20121022T150848,34+08</datetime></created>
+<modified><datetime>20121022T160251,63+08</datetime></modified>
+<revised><datetime>20121022T160251,62+08</datetime></revised>
+<lastaccessed><datetime>20121022T160251,63+08</datetime></lastaccessed>
+<addedtofile><datetime>20121022T150849,33+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$TITLE" sign="true"><text>WF_Action_Approve</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime>20121022T151111,16+08</datetime></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$ImageNames" sign="true"><text>tick.gif</text></item></note>

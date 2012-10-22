@@ -14,6 +14,8 @@ Use "SieyuanWorkflowEngine"
 Declare Class SWEUI
 Declare Class UserAction
 Declare Class Form
+Declare Class UIForm
+Declare Class UIFormEvent
 
 '++LotusScript Development Environment:2:5:(Declarations):0:10
 %REM
@@ -110,6 +112,8 @@ Class UserAction
 End Class
 
 
+
+
 %REM
 	Class Form
 	Description: Comments for Class
@@ -141,4 +145,172 @@ Class Form
 		
 	End Function
 	
+End Class
+%REM
+	Class UIForm
+	Description: Comments for Class
+%END REM
+Class UIForm
+	Private UIDocument As NotesUIDocument
+	Private Document As NotesDocument
+	Private WorkflowEngine As SieyuanWorkflowEngine
+	Public CurrentUser As User
+	
+	%REM
+		Sub New
+		Description: Comments for Sub
+	%END REM
+	Public Sub New (engine As SieyuanWorkflowEngine)
+			
+	End Sub
+	
+	'############## Workflow Action Start #################
+	
+	%REM
+		Function Submit
+		Description: Comments for Function
+	%END REM
+	Public Function Submit
+		
+	End Function
+	
+	%REM
+		Function Approve
+		Description: Comments for Function
+	%END REM
+	Public Function Approve
+		
+	End Function
+	
+	%REM
+		Function Reject
+		Description: Comments for Function
+	%END REM
+	Public Function Reject
+		
+	End Function
+	
+	'############## Workflow Action End #################
+	
+	%REM
+		Function IsAdministrator
+		Description: Comments for Function
+	%END REM
+
+	
+	%REM
+		Function IsAdministrator
+		Description: Comments for Function
+	%END REM
+	Public Function IsAdministrator As Boolean
+	    
+	End Function
+	
+	%REM
+		Function IsOwner
+		Description: Comments for Function
+	%END REM
+	Public Function IsOwner As Boolean
+	    
+	End Function
+	
+	%REM
+		Function IsAssignee
+		Description: Comments for Function
+	%END REM
+	Public Function IsAssignee As Boolean
+	    
+	End Function
+	
+	%REM
+		Function IsCandidate
+		Description: Comments for Function
+	%END REM
+	Public Function IsCandidate As Boolean
+	    
+	End Function
+	
+	%REM
+		Function IsDelegated
+		Description: Comments for Function
+	%END REM
+	Public Function IsDelegated As Boolean
+	    
+	End Function
+	
+End Class
+
+
+%REM
+	Class UIFormEvent
+	Description: Comments for Class
+%END REM
+Class UIFormEvent
+    Private UIWrokspace As NotesUIWorkspace
+    Private UIDocument As NotesUIDocument
+    Private Document As NotesDocument
+    Public Engine As SieyuanWorkflowEngine
+    %REM
+    	Sub New
+    	Description: Comments for Sub
+    %END REM
+    Public Sub New (engine As SieyuanWorkflowEngine)
+        Dim ws As New NotesUIWorkspace
+        Dim uidoc As NotesUIDocument
+        Dim doc As NotesDocument
+        
+        Set Me.UIWrokspace = ws
+        Set Me.UIDocument = ws.Currentdocument
+        Set Me.Document = ws.Currentdocument.Document
+        Set Me.Engine = engine
+    End Sub
+    
+    %REM
+    	Function QuerySubmit
+    	Description: Comments for Function
+    %END REM
+    Public Function QuerySubmit
+        
+    End Function
+    
+    %REM
+    	Function PostSubmit
+    	Description: Comments for Function
+    %END REM
+    Public Function PostSubmit
+        
+    End Function
+    
+    %REM
+    	Function QueryApprove
+    	Description: Comments for Function
+    %END REM
+    Public Function QueryApprove
+        
+    End Function
+    
+    %REM
+    	Function PostApprove
+    	Description: Comments for Function
+    %END REM
+    Public Function PostApprove
+        
+    End Function
+    
+    %REM
+    	Function QueryReject
+    	Description: Comments for Function
+    %END REM
+    Public Function QueryReject
+        
+    End Function
+    
+    %REM
+    	Function PostReject
+    	Description: Comments for Function
+    %END REM
+    Public Function PostReject
+        
+    End Function
+    
 End Class

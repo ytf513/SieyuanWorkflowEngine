@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A930001D57A" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1da" sequence="4" unid="A8F36B426427622448257A9F002DBD19">
+<created><datetime>20121022T161935,29+08</datetime></created>
+<modified><datetime>20121022T162153,91+08</datetime></modified>
+<revised><datetime>20121022T162153,90+08</datetime></revised>
+<lastaccessed><datetime>20121022T162153,91+08</datetime></lastaccessed>
+<addedtofile><datetime>20121022T161935,31+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$TITLE" sign="true"><text>WF_Action_Comment</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime>20121022T162138,17+08</datetime></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$ImageNames" sign="true"><text>balloon-box-left.gif</text></item></note>

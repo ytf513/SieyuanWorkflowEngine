@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="3.0" replicaid="48257A930001D57A" version="8.5" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1d2" sequence="2" unid="FC0B6D49FA44CC9448257A9F0027AD66">
+<created><datetime>20121022T151322,94+08</datetime></created>
+<modified><datetime>20121022T151334,74+08</datetime></modified>
+<revised><datetime>20121022T151334,73+08</datetime></revised>
+<lastaccessed><datetime>20121022T151334,74+08</datetime></lastaccessed>
+<addedtofile><datetime>20121022T151322,97+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime>20121022T151258,23+08</datetime></item>
+<item name="$ImageNames" sign="true"><text>cross.gif</text></item>
+<item name="$TITLE" sign="true"><textlist><text>WF_Action_Reject</text></textlist></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item></note>
