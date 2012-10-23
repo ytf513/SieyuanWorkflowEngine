@@ -44,15 +44,17 @@ Class SieyuanWorkflowEngine
 		Sub New
 		Description: Comments for Sub
 	%END REM
-	Sub New (server As String, dbpath As String)
-		Dim db As NotesDatabase
+	Sub New (EngineSetdoc As NotesDocument)
+		'Dim db As NotesDatabase
 		
-		Set db = New NotesDatabase("", "")
-		If db.Open(server, dbpath) Then
-			Set EngineSettingDocument = db.Getprofiledocument("EngineSetting")
-		Else
-			Error ERROR_NUMBER_ENGINE_DB_NOT_FOUND, ERROR_MSG_ENGINE_DB_NOT_FOUND
-		End If
+		'Set db = New NotesDatabase("", "")
+		'If db.Open(server, dbpath) Then
+		'	Set EngineSettingDocument = db.Getprofiledocument("EngineSetting")
+		'Else
+		'	Error ERROR_NUMBER_ENGINE_DB_NOT_FOUND, ERROR_MSG_ENGINE_DB_NOT_FOUND
+		'End If
+		
+    	Set Me.EngineSettingDocument = EngineSetdoc
 		
 		Set me.utility = New SWEUtility
 	End Sub

@@ -151,93 +151,117 @@ End Class
 	Description: Comments for Class
 %END REM
 Class UIForm
-	Private UIDocument As NotesUIDocument
-	Private Document As NotesDocument
-	Private WorkflowEngine As SieyuanWorkflowEngine
-	Public CurrentUser As User
-	
-	%REM
+    Private UIDocument As NotesUIDocument
+    Private Document As NotesDocument
+    Private WorkflowEngine As SieyuanWorkflowEngine
+    Public CurrentUser As User
+    Private UIFormEvent As UIFormEvent
+    %REM
 		Sub New
 		Description: Comments for Sub
-	%END REM
-	Public Sub New (engine As SieyuanWorkflowEngine)
-			
-	End Sub
-	
-	'############## Workflow Action Start #################
-	
-	%REM
+    %END REM
+    Public Sub New (engine As SieyuanWorkflowEngine)
+
+        
+    End Sub
+    
+    '############## Workflow Action Start #################
+    
+    %REM
 		Function Submit
 		Description: Comments for Function
-	%END REM
-	Public Function Submit
-		
-	End Function
-	
-	%REM
+    %END REM
+    Public Function Submit
+        
+        'Query Submit Event
+        If Not Me.UIFormEvent Is Nothing Then
+            If Not Me.UIFormEvent.QuerySubmit() Then
+                Exit Function
+            End If
+        End If
+        
+        'Submit
+        
+        
+        'Post Submit Event
+        If Not Me.UIFormEvent Is Nothing Then
+            Call Me.UIFormEvent.PostSubmit()
+        End If
+        
+    End Function
+    
+    %REM
 		Function Approve
 		Description: Comments for Function
-	%END REM
-	Public Function Approve
-		
-	End Function
-	
-	%REM
+    %END REM
+    Public Function Approve
+        
+    End Function
+    
+    %REM
 		Function Reject
 		Description: Comments for Function
-	%END REM
-	Public Function Reject
-		
-	End Function
-	
-	'############## Workflow Action End #################
-	
-	%REM
+    %END REM
+    Public Function Reject
+        
+    End Function
+    
+    '############## Workflow Action End #################
+    
+    %REM
 		Function IsAdministrator
 		Description: Comments for Function
-	%END REM
+    %END REM
 
-	
-	%REM
+    
+    %REM
 		Function IsAdministrator
 		Description: Comments for Function
-	%END REM
-	Public Function IsAdministrator As Boolean
-	    
-	End Function
-	
-	%REM
+    %END REM
+    Public Function IsAdministrator As Boolean
+        
+    End Function
+    
+    %REM
 		Function IsOwner
 		Description: Comments for Function
-	%END REM
-	Public Function IsOwner As Boolean
-	    
-	End Function
-	
-	%REM
+    %END REM
+    Public Function IsOwner As Boolean
+        
+    End Function
+    
+    %REM
 		Function IsAssignee
 		Description: Comments for Function
-	%END REM
-	Public Function IsAssignee As Boolean
-	    
-	End Function
-	
-	%REM
+    %END REM
+    Public Function IsAssignee As Boolean
+        
+    End Function
+    
+    %REM
 		Function IsCandidate
 		Description: Comments for Function
-	%END REM
-	Public Function IsCandidate As Boolean
-	    
-	End Function
-	
-	%REM
+    %END REM
+    Public Function IsCandidate As Boolean
+        
+    End Function
+    
+    %REM
 		Function IsDelegated
 		Description: Comments for Function
-	%END REM
-	Public Function IsDelegated As Boolean
-	    
-	End Function
-	
+    %END REM
+    Public Function IsDelegated As Boolean
+        
+    End Function
+    
+
+    %REM
+        Function BindEvent
+        Description: Comments for Function
+    %END REM
+    Public Function BindEvent(evt As UIFormEvent)
+        Set Me.UIFormEvent = evt
+    End Function
 End Class
 
 
@@ -246,31 +270,22 @@ End Class
 	Description: Comments for Class
 %END REM
 Class UIFormEvent
-    Private UIWrokspace As NotesUIWorkspace
-    Private UIDocument As NotesUIDocument
-    Private Document As NotesDocument
-    Public Engine As SieyuanWorkflowEngine
+    Private uiform As UIForm
+    
     %REM
-    	Sub New
-    	Description: Comments for Sub
+    	Sub SerUIForm
+    	Description: Comments for Function
     %END REM
-    Public Sub New (engine As SieyuanWorkflowEngine)
-        Dim ws As New NotesUIWorkspace
-        Dim uidoc As NotesUIDocument
-        Dim doc As NotesDocument
-        
-        Set Me.UIWrokspace = ws
-        Set Me.UIDocument = ws.Currentdocument
-        Set Me.Document = ws.Currentdocument.Document
-        Set Me.Engine = engine
+    Public Sub SerUIForm (f As UIForm)
+        Set Me.uiform = f
     End Sub
     
     %REM
     	Function QuerySubmit
     	Description: Comments for Function
     %END REM
-    Public Function QuerySubmit
-        
+    Public Function QuerySubmit As Boolean
+        QuerySubmit = True
     End Function
     
     %REM
@@ -285,8 +300,8 @@ Class UIFormEvent
     	Function QueryApprove
     	Description: Comments for Function
     %END REM
-    Public Function QueryApprove
-        
+    Public Function QueryApprove As Boolean
+        QueryApprove = True
     End Function
     
     %REM
@@ -301,8 +316,8 @@ Class UIFormEvent
     	Function QueryReject
     	Description: Comments for Function
     %END REM
-    Public Function QueryReject
-        
+    Public Function QueryReject As Boolean
+        QueryReject = True
     End Function
     
     %REM
@@ -312,5 +327,7 @@ Class UIFormEvent
     Public Function PostReject
         
     End Function
+    
+
     
 End Class
