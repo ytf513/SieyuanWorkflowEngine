@@ -1,161 +1,20 @@
 '++LotusScript Development Environment:2:5:(Options):0:74
-%REM
-	Library SWEUI
-	Created Oct 16, 2012 by 沈少尘 20947/siyuan
-	Description: Comments for Library
-%END REM
 Option Public
 Option Declare
 Use "SieyuanWorkflowEngine"
 
-
-
 '++LotusScript Development Environment:2:5:(Forward):0:1
-Declare Class SWEUI
-Declare Class UserAction
-Declare Class Form
 Declare Class UIForm
 Declare Class UIFormEvent
 
 '++LotusScript Development Environment:2:5:(Declarations):0:10
-%REM
-	Class UIWorkflow
-	Description: Comments for Class
-%END REM
-Class SWEUI
-	Public Engine As SieyuanWorkflowEngine
-	Public Form As Form
-	%REM
-		Sub new
-		Description: Comments for Sub
-	%END REM
-	Public Sub New
-		
-	End Sub
-	
-	%REM
-		Function SetEngine
-		Description: Comments for Function
-	%END REM
-	Public Function SetEngine(srv As String, path As String)
-		Set Me.Engine = New SieyuanWorkflowEngine(srv, path)
-	End Function
-	
-	
-	%REM
-		Function SetForm
-		Description: Comments for Function
-	%END REM
-	Public Function SetUIForm(uidoc As NotesUIDocument)
-		
-	End Function
-
-	%REM
-		Function SetFormData
-		Description: Comments for Function
-	%END REM
-	Public Function SetForm(doc As NotesDocument)
-		
-	End Function
-
-
-	%REM
-		Function GetCurrentTask
-		Description: Comments for Function
-	%END REM
-	Public Function GetCurrentTask
-		
-	End Function
-	
-	%REM
-		Function Listen
-		Description: Comments for Function
-	%END REM
-	Public Function ListenTaskEvent(taskEvent As TaskEvent)
-		
-	End Function
-	
-End Class
-
-
-%REM
-	Class UserAction
-	Description: Comments for Class
-%END REM
-Class UserAction
-	public uidoc As NotesUIDocument
-	private doc As NotesDocument
-	%REM
-		Function Submit
-		Description: Comments for Function
-	%END REM
-	Public Function Submit
-		
-	End Function
-	
-	%REM
-		Function Approve
-		Description: Comments for Function
-	%END REM
-	Public Function Approve
-		
-	End Function
-	
-	%REM
-		Function Reject
-		Description: Comments for Function
-	%END REM
-	Public Function Reject
-		
-	End Function
-	
-End Class
-
-
-
-
-%REM
-	Class Form
-	Description: Comments for Class
-%END REM
-Class Form
-	Private BusinessKey As String
-	Public Action As UserAction
-	%REM
-		Function SetBusinessKey
-		Description: Comments for Function
-	%END REM
-	Public Function SetBusinessKey(key As String) As String
-		
-	End Function
-	
-	%REM
-		Function GetBusinessKey
-		Description: Comments for Function
-	%END REM
-	Public Function GetBusinessKey As String
-		
-	End Function
-	
-	%REM
-		Function Submit
-		Description: Comments for Function
-	%END REM
-	Public Function Submit
-		
-	End Function
-	
-End Class
-%REM
-	Class UIForm
-	Description: Comments for Class
-%END REM
 Class UIForm
     Private UIDocument As NotesUIDocument
     Private Document As NotesDocument
     Private WorkflowEngine As SieyuanWorkflowEngine
     Public CurrentUser As User
     Private UIFormEvent As UIFormEvent
+    Public BusinessKey As String
     %REM
 		Sub New
 		Description: Comments for Sub
@@ -261,7 +120,27 @@ Class UIForm
     %END REM
     Public Function BindEvent(evt As UIFormEvent)
         Set Me.UIFormEvent = evt
+        Call Me.UIFormEvent.SerUIForm(Me)
     End Function
+    
+    %REM
+    	Function Dialoge
+    	Description: Comments for Function
+    %END REM
+    Public Function SelectAssigneeDialoge
+        
+    End Function
+    
+    %REM
+    	Function NextStepDialogbox
+    	Description: Comments for Function
+    %END REM
+    Public Function NextStepDialogbox(document As NotesDocument)
+        
+    End Function
+    
+    
+    
 End Class
 
 
