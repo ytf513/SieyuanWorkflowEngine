@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A930001D57A'>
+<noteinfo noteid='1f6' unid='835EEF6CDE509BF048257AA2002AD61B' sequence='3'>
+<created><datetime>20121025T154753,23+08</datetime></created>
+<modified><datetime>20121025T154834,70+08</datetime></modified>
+<revised><datetime>20121025T154834,69+08</datetime></revised>
+<lastaccessed><datetime>20121025T154834,70+08</datetime></lastaccessed>
+<addedtofile><datetime>20121025T154753,24+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><text>(WF_CommentDialogBox)</text></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$Flags'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>RejectionDialogBox</text></item>
+<item name='Comment' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><text>Comment</text></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoL/WgACAAAA
+AAAAAAAAoAUAAKAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
+AAAAlIUAAAAAoAUIAAAAAAABAAAABAAAAIMEAgDdBgEA+//7/ywAIAAAAAECAAAAAAAAAAAAAAAA
+AADn7vUA9/f3AAEA////AAAAAAAAAFz/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAOAAAAAAAAAAEAAAoAAAAAAQAAAAAA/P86AAAAAAABAAEAAQABAAEAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAQDv7+8AAAAAAAAAAAAAAN4GAQD7/6MOoAU5ADwAOQA5AAICpBIAAOgFjQwA
+AKICAiIBAQAAgQKC/1oAAwAAAAAAAAAAAAYGjQwGBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAIYBAAAAAFSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAMAhf8OAAEAAAoT
+0uITvPukEgAB/wyAHAAAqAIgIgEBAACBAoL/WgAEAAAAAAAAAAAA/wyAHP8MAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhgEAAAAAVIcAAAAAAAAAAAAAAAABAAAABAAA
+AIMEBACF/wgAAQAACt0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AHgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv8sAIoAAAUAMAIAAAAA
+AAACAQAACQAAAAAAAAAABwAAAAAAQ29tbWVudABiDgEAhAAAAAAAAAAAAN4GAACK/4X/CAABAAAK
+pQYAAAAAgQKDBAIAhf8IAAEAAAo=
+</rawitemdata></item></note>
+

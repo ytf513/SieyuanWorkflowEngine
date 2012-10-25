@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A930001D57A'>
+<noteinfo noteid='1ea' unid='7D1FA018C35C184448257AA200093894' sequence='8'>
+<created><datetime>20121025T094043,08+08</datetime></created>
+<modified><datetime>20121025T094529,59+08</datetime></modified>
+<revised><datetime>20121025T094529,58+08</datetime></revised>
+<lastaccessed><datetime>20121025T094529,59+08</datetime></lastaccessed>
+<addedtofile><datetime>20121025T094043,16+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$TITLE' sign='true'><text>(WF_TASK)</text></item>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$FrameSet' sign='true'>
+<rawitemdata type='1'>
+7/8YAAIAAwAAAAAAAAAAAAAAAAAAAAAA8P8+AAUAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAUAAAAA
+AAIAAQAAAAAABQAAAAAAAAACABQAAgBQAAMAAQDx/zoAAQAAAABAAAADAAEAAQAAAAAABgAAAAAA
+AQAAAAAAAABBY3Rpb24BAP///8gBAAAJAQAAAADI8f84AAEAAAAAQAAAAwABAAEAAAAAAAQAAAAA
+AAEAAAAAAAAARm9ybQEA////yAEAAAoBAAAAAMg=
+</rawitemdata></item>
+<item name='$Flags'><text>#34CQ</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+

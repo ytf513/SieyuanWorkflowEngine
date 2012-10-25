@@ -2,11 +2,11 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
  replicaid='48257A930001D57A'>
-<noteinfo noteid='1b2' unid='1F1A1E8B92EE3DE148257A930009FB05' sequence='33'>
+<noteinfo noteid='1b2' unid='1F1A1E8B92EE3DE148257A930009FB05' sequence='34'>
 <created><datetime>20121010T094900,85+08</datetime></created>
-<modified><datetime>20121022T153645,53+08</datetime></modified>
-<revised><datetime>20121022T153645,52+08</datetime></revised>
-<lastaccessed><datetime>20121022T153645,53+08</datetime></lastaccessed>
+<modified><datetime>20121025T094401,07+08</datetime></modified>
+<revised><datetime>20121025T094401,05+08</datetime></revised>
+<lastaccessed><datetime>20121025T094401,07+08</datetime></lastaccessed>
 <addedtofile><datetime>20121010T094901,15+08</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
 <wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
@@ -228,8 +228,11 @@ AAAJACgBCwCYARQAPAAYALABHADIASAACgAAAA==
 <item name='ID' placeholder='true'>
 <rawitemdata type='0'>
 </rawitemdata></item>
-<item name='$Fields'><textlist><text>ID</text><text>Price</text><text>Amount</text><text
->Good</text><text>user</text></textlist></item>
+<item name='BusinessKey' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>BusinessKey</text><text>ID</text><text
+>Price</text><text>Amount</text><text>Good</text><text>user</text></textlist></item>
 <item name='$Body' sign='true'>
 <rawitemdata type='1'>
 gQKC/1oAAQAAAAAAAQABAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -274,10 +277,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/yYAigAABQAwAgAAAAAAAAIBAAAJAAAAAAAAAAAC
 AAAAAABJRGIOAQCEAAAAAAAAAAAA3gYAAIr/hf8IAAEAAAqkEgQCjBnVJgAAqiIzMwEBAACBAoME
 BgCF/wgAAQAACqQSBQARBn8KAACqIjMzAQEAAIECgv9aAAcAAAAAAAAAAAA+Bn8KPgYAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGAQAAAABUhwAAAAAAAAAAAAAAAAEA
-AAAEAAAAgwQHAIX/CAABAAAJpBIFAWELqhgAAKoiMzMBAQAAgQKDBAUAhf8IAAEAAAqkEgUCjBnV
-JgAAqiIzMwEBAACBAoMEBgCF/wgAAQAACqQSBgARBn8KAACqAjMzAQEAAIECgwQHAIX/CAABAAAJ
-pBIGAWELqhgAAKoCMzMBAQAAgQKDBAUAhf8IAAEAAAqkEgYCjBnVJgAAqgIzMwEBAACBAoMEBgCF
-/wgAAQAACqUGAAAAAIECgwQCAIX/CAABAAAK
+AAAEAAAAgwQHAIX/CAABAAAJpBIFAWELqhgAAKoiMzMBAQAAgQKDBAUAhf8IAAEAAArdBgAAiv/+
+/1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/SACAAAAFADACAAAAAAAAAgEAAAkYAAAAAAAAAAsAAAAA
+ABgAAAAKAJAAVgEDAAcADAAFAAkwUzBFAEJ1c2luZXNzS2V5AGIOAQCEAAAAAAAAAAAA3gYAAIr/
+hf8IAAEAAAqkEgUCjBnVJgAAqiIzMwEBAACBAoMEBgCF/wgAAQAACqQSBgARBn8KAACqAjMzAQEA
+AIECgwQHAIX/CAABAAAJpBIGAWELqhgAAKoCMzMBAQAAgQKDBAUAhf8IAAEAAAqkEgYCjBnVJgAA
+qgIzMwEBAACBAoMEBgCF/wgAAQAACqUGAAAAAIECgwQCAIX/CAABAAAK
 </rawitemdata></item>
 <item name='$V5ACTIONS' sign='true'>
 <rawitemdata type='1'>

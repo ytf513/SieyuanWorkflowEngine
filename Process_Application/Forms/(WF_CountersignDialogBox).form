@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
+ replicaid='48257A930001D57A'>
+<noteinfo noteid='1f2' unid='D11495F1B864501F48257AA200131081' sequence='6'>
+<created><datetime>20121025T112814,09+08</datetime></created>
+<modified><datetime>20121025T154821,74+08</datetime></modified>
+<revised><datetime>20121025T154821,73+08</datetime></revised>
+<lastaccessed><datetime>20121025T154821,74+08</datetime></lastaccessed>
+<addedtofile><datetime>20121025T112814,14+08</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
+<wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$Flags'><text/></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>RejectionDialogBox</text></item>
+<item name='NextAssignee' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='Comment' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>Comment</text><text>NextAssignee</text></textlist></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAEAAAqBAoL/WgACAAAA
+AAAAAAAAoAUAAKAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
+AAAAlIUAAAAAoAUIAAAAAAABAAAABAAAAIMEAgDdBgEA+//7/ywAIAAAAAICAAAAAAAAAAAAAAAA
+AADn7vUA9/f3AAEA////AAAAAAAAAFz/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAOAAAAAAAAAAEAAAoAAAAAAQAAAAAA/P86AAAAAAABAAEAAQABAAEAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAQDv7+8AAAAAAAAAAAAAAN4GAQD7/6MOoAU5ADwAOQA5AAICpBIAAOgFjQwA
+AKICAiIBAQAAgQKC/1oAAwAAAAAAAAAAAAYGjQwGBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAIYBAAAAAFSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAMAhf8UAAEAAAkT
+0aET1PETyMsT1LGkEgAB/wyAHAAAqAIgIgEBAACBAoL/WgAEAAAAAAAAAAAA/wyAHP8MAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhgEAAAAAVIcAAAAAAAAAAAAAAAAB
+AAAABAAAAIMEBACF/wgAAQAACt0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAHgAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsP8UAAAAAAAA
+AAAAAQAAAAAAAACK/zAAjgABBQYwAgAAAAAAAAIBAAAJAAAAAAAAAAAMAAAAAABOZXh0QXNzaWdu
+ZWXeBgAAiv+F/wgAAQAACqQSAQDoBY0MAACiAgIiAQEAAIECgwQDAIX/DgABAAAKE9LiE7z7pBIB
+Af8MgBwAAKgCICIBAQAAgQKDBAQAhf8IAAEAAArdBgAAiv/+/1AAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AIr/LACKAAAFADACAAAAAAAAAgEAAAkAAAAAAAAAAAcAAAAAAENvbW1lbnQAYg4BAIQAAAAAAAAA
+AADeBgAAiv+F/wgAAQAACqUGAAAAAIECgwQCAIX/CAABAAAK
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>(WF_CountersignDialogBox)</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+
