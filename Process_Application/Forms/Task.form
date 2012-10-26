@@ -2,11 +2,11 @@
 <!DOCTYPE note SYSTEM 'xmlschemas/domino_8_5_3.dtd'>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='8.5' maintenanceversion='3.0'
  replicaid='48257A930001D57A'>
-<noteinfo noteid='1e6' unid='668CB534828F8B4548257AA20007508A' sequence='5'>
+<noteinfo noteid='1e6' unid='668CB534828F8B4548257AA20007508A' sequence='7'>
 <created><datetime>20121025T091953,70+08</datetime></created>
-<modified><datetime>20121025T094439,98+08</datetime></modified>
-<revised><datetime>20121025T094439,97+08</datetime></revised>
-<lastaccessed><datetime>20121025T094439,98+08</datetime></lastaccessed>
+<modified><datetime>20121026T093426,88+08</datetime></modified>
+<revised><datetime>20121026T093426,87+08</datetime></revised>
+<lastaccessed><datetime>20121026T093426,88+08</datetime></lastaccessed>
 <addedtofile><datetime>20121025T091954,56+08</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=沈少尘 20947/O=siyuan</name></updatedby>
 <wassignedby><name>CN=沈少尘 20947/O=siyuan</name></wassignedby>
@@ -23,7 +23,6 @@ hhgHAIAAAAAAgAAAFgABAPH8/AAQAAAA
 <item name='$Flags'><text/></item>
 <item name='$FrameInfo'><textlist><text>(WF_TASK)</text><text>Action</text></textlist></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
-<item name='$$ScriptName' summary='false' sign='true'><text>Task</text></item>
 <item name='TaskID' placeholder='true'>
 <rawitemdata type='0'>
 </rawitemdata></item>
@@ -31,6 +30,15 @@ hhgHAIAAAAAAgAAAFgABAPH8/AAQAAAA
 <rawitemdata type='0'>
 </rawitemdata></item>
 <item name='$Fields'><textlist><text>BusinessKey</text><text>TaskID</text></textlist></item>
+<item name='$V5ACTIONS' sign='true'>
+<rawitemdata type='1'>
+vRwjAAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABANTQyAABAAAAAAAJAAAAAAABANTQyAAA
+AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/xwAAAABAAAAnwEAAAYAAAAAAAAAU3VibWl0vv8eAAAA
+AQAAAJ8BAAAHAAAAAAAAAEFwcHJvdmUAvv8cAAAAAQAAAJ8BAAAGAAAAAAAAAFJlamVjdA==
+</rawitemdata></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>Task</text></item>
 <item name='$Body' sign='true'>
 <rawitemdata type='1'>
 gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -43,13 +51,5 @@ AAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/1wAigAABQAwAgAA
 AAAAAAIBAAkJLAAAAAAAAAALAAAAAAAsAAAAKgABACAAQTFFRDBBQkZEMTc2RTc1NTQ4MjU3QUEy
 MDAwOTZEOEQDAEJ1c2luZXNzS2V5AGIOAQCEAAAAAAAAAAAA3gYAAIr/3QYAAIX/hf8IAAEACQnS
 CAEAAIAAAN4GAACF/w==
-</rawitemdata></item>
-<item name='$V5ACTIONS' sign='true'>
-<rawitemdata type='1'>
-vRwjAAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABANTQyAABAAAAAAAJAAAAAAABANTQyAAA
-AB8AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPz/OgAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAC+/xwAAAABAAAAnwEAAAYAAAAAAAAAU3VibWl0vv8eAAAA
-AQAAAJ8BAAAHAAAAAAAAAEFwcHJvdmUAvv8cAAAAAQAAAJ8BAAAGAAAAAAAAAFJlamVjdA==
 </rawitemdata></item></note>
 

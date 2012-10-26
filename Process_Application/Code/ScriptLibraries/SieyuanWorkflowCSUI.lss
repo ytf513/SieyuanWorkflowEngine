@@ -20,7 +20,9 @@ Class UIForm
 		Description: Comments for Sub
     %END REM
     Public Sub New (engine As SieyuanWorkflowEngine)
-
+        Dim ws As New NotesUIWorkspace
+        Set me.UIDocument = ws.Currentdocument
+        Set me.Document = Me.UIDocument.Document
         
     End Sub
     
@@ -40,6 +42,8 @@ Class UIForm
         End If
         
         'Submit
+        
+        Call Me.NextStepDialogbox(Me.Document)
         
         
         'Post Submit Event
@@ -62,6 +66,14 @@ Class UIForm
 		Description: Comments for Function
     %END REM
     Public Function Reject
+        
+    End Function
+
+    %REM
+    	Function Comment
+    	Description: Comments for Function
+    %END REM
+    Public Function Comment
         
     End Function
     
@@ -136,7 +148,8 @@ Class UIForm
     	Description: Comments for Function
     %END REM
     Public Function NextStepDialogbox(document As NotesDocument)
-        
+        Dim ws As New NotesUIWorkspace
+        Call ws.Dialogbox("(WF_NextStepDialogbox)", True, True, False, False, False, False, "提交至", document, True, False, True)
     End Function
     
     
@@ -206,7 +219,5 @@ Class UIFormEvent
     Public Function PostReject
         
     End Function
-    
-
     
 End Class
